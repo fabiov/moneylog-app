@@ -80,6 +80,7 @@
       true,
       "single"
     ],
+    "radix": false,
     "semicolon": {
       "options": [
         "always"
