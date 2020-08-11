@@ -1,4 +1,4 @@
 export const movements = [
-  {id: 1, account: {}, category: {}, date: new Date(), amount: 10.5, description: 'Shopping'},
-  {id: 2, account: {}, category: {}, date: new Date(), amount: 11.5, description: 'Grocery'}
+  {id: 1, account: {}, category: {}, date: new Date(2020, 8, 5),  amount: 10, description: 'Capelli'},
+  {id: 2, account: {}, category: {}, date: new Date(2020, 8, 10), amount: 4,  description: 'Colazione'}
 ];

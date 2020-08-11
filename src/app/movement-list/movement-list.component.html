@@ -1,6 +1,5 @@
 <h2>Movements</h2>
-
 <div *ngFor="let movement of movements">
-  <div>{{ movement.date }} {{ movement.amount }}</div>
+  <div>{{ movement.date | date: 'dd/MM/y'}} {{ movement.amount | currency: 'EUR' }}</div>
   <p><a [title]="movement.description" [routerLink]="['/products', movement.id]">{{ movement.description }}</a></p>
 </div>
