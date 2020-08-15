@@ -6,19 +6,22 @@ import { AppComponent } from './app.component';
 import {RouterModule} from '@angular/router';
 import { MovementDetailsComponent } from './movement-details/movement-details.component';
 import { MovementListComponent } from './movement-list/movement-list.component';
+import { SettingsComponent } from './settings/settings.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MovementDetailsComponent,
-    MovementListComponent
+    MovementListComponent,
+    SettingsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     RouterModule.forRoot([
       { path: '', component: MovementListComponent },
-      { path: 'products/:productId', component: MovementDetailsComponent },
+      { path: 'movements/:movementId', component: MovementDetailsComponent },
+      { path: 'settings', component: SettingsComponent },
     ])
   ],
   providers: [],
