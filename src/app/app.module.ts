@@ -3,7 +3,9 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import {RouterModule} from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
+
 import { MovementDetailsComponent } from './movement-details/movement-details.component';
 import { MovementListComponent } from './movement-list/movement-list.component';
 import { SettingsComponent } from './settings/settings.component';
@@ -18,6 +20,7 @@ import { SettingsComponent } from './settings/settings.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     RouterModule.forRoot([
       { path: '', component: MovementListComponent },
       { path: 'movements/:movementId', component: MovementDetailsComponent },

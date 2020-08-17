@@ -1,5 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { settings } from './settings';
+import { settings } from '../../settings';
 
 @Injectable({
   providedIn: 'root'
@@ -7,7 +8,7 @@ import { settings } from './settings';
 export class SettingsService {
   settings = settings;
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
   getSettings(): object {
     return this.settings;
