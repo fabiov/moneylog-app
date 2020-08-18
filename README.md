@@ -26,7 +26,21 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 
+## CLI Commands
+New Component: `ng generate component xyz`
+Angular Material: `ng add @angular/material`
+Add PWA Support: `ng add @angular/pwa`
+Add Dependency: `ng add _____`
+Build for Production: `ng build --prod`
+
 ## Links
-https://angular.io/start/start-data#retrieve-shipping-prices  
-https://code-maze.com/angular-best-practices/  
-https://blog.angular-university.io/angular-jwt-authentication/  
+[Learn Angular](https://angular.io/tutorial)  
+[CLI Documentation](https://angular.io/cli)  
+[Blog Angular](https://blog.angular.io)  
+[Animation](https://angular.io/guide/animations)
+[CLI](https://cli.angular.io/)  
+
+[Best practices](https://code-maze.com/angular-best-practices)    
+[Lettura guida](https://angular.io/start/start-data#retrieve-shipping-prices)    
+[jwt authentication](https://blog.angular-university.io/angular-jwt-authentication)  
+[creating apps with angular material](https://auth0.com/blog/creating-beautiful-apps-with-angular-material)  
