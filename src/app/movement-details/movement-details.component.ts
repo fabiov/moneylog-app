@@ -15,7 +15,7 @@ export class MovementDetailsComponent implements OnInit {
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {
       this.movement = movements.find(
-        item => parseInt(params.get('productId')) === item.id
+        item => parseInt(params.get('movementId')) === item.id
       );
       console.log(this.movement);
     });

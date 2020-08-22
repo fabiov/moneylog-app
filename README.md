@@ -41,6 +41,6 @@ Build for Production: `ng build --prod`
 [CLI](https://cli.angular.io/)  
 
 [Best practices](https://code-maze.com/angular-best-practices)    
-[Lettura guida](https://angular.io/start/start-data#retrieve-shipping-prices)    
+[Lettura guida](https://angular.io/start/start-forms)    
 [jwt authentication](https://blog.angular-university.io/angular-jwt-authentication)  
 [creating apps with angular material](https://auth0.com/blog/creating-beautiful-apps-with-angular-material)  

@@ -1,6 +1,6 @@
 <h2>Movement Details</h2>
 <div *ngIf="movement">
-  <h3>{{ movement.amount | currency }}</h3>
+  <h3>{{ movement.amount | currency: 'EUR' }}</h3>
   <h4>{{ movement.date }}</h4>
   <p>{{ movement.description }}</p>
 </div>

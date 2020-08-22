@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { movements } from '../movements';
+import {movements} from '../movements';
 
 @Component({
   selector: 'app-movement-list',
