@@ -1,5 +1,33 @@
+<form>
+  <h3>Add a movement</h3>
+  <div>
+    <label for="date">Date:</label><input #newDate  name="date" id="date" type="date">
+  </div>
+  <div>
+    <label for="description">Description:</label><input #newDescription name="description" id="description" type="text">
+  </div>
+  <div>
+    <label for="amount">Amount:</label><input #newAmount name="amount" id="amount" type="number" step="0.01">
+  </div>
+  <div>
+    <button (click)="addMovement(newDate, newDescription, newAmount)">Submit movement</button>
+  </div>
+</form>
 <h2>Movements</h2>
-<div *ngFor="let movement of movements">
-  <div>{{ movement.date | date: 'dd/MM/y'}} {{ movement.amount | currency: 'EUR' }}</div>
-  <p><a [title]="movement.description" [routerLink]="['/movements', movement.id]">{{ movement.description }}</a></p>
-</div>
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left;">Data</th>
+      <th style="text-align: right;">Importo</th>
+      <th style="text-align: left;">Descrizione</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let movement of sortedMovements()">
+      <td>{{ movement.date | date: 'dd/MM/y'}}</td>
+      <td style="text-align: right;">{{ movement.amount | currency: 'EUR' }}</td>
+      <td>{{ movement.description }}</td>
+      <td><a title="View" [routerLink]="['/movements', movement.id]">View</a></td>
+    </tr>
+  </tbody>
+</table>
