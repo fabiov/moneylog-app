@@ -1,0 +1,30 @@
+<h3>Add a movement</h3>
+<form [formGroup]="movementForm" (ngSubmit)="onSubmit(movementForm.value)">
+  <div>
+    <label for="amount">Amount:</label>
+    <input [formControl]="amount" id="amount" type="number" step="0.01" placeholder="0.0">
+    <div *ngIf="amount.hasError('required')" class="ui error message">
+      Amount is required
+    </div>
+  </div>
+  <div>
+    <label for="date">Date:</label>
+    <input [formControl]="date" id="date" type="date">
+    <div *ngIf="date.hasError('required')" class="ui error message">
+      Date is required
+    </div>
+  </div>
+  <div>
+    <label for="description">Description:</label>
+    <input [formControl]="description" id="description" type="text" placeholder="Description">
+    <div *ngIf="description.hasError('required')" class="ui error message">
+      Description is required
+    </div>
+  </div>
+  <div *ngIf="!movementForm.valid" class="ui error message">
+    Form is invalid
+  </div>
+  <div>
+    <button [disabled]="!movementForm.valid" type="submit" class="ui button">Submit</button>
+  </div>
+</form>

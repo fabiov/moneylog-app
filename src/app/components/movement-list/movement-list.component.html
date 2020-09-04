@@ -1,18 +1,4 @@
-<form>
-  <h3>Add a movement</h3>
-  <div>
-    <label for="date">Date:</label><input #newDate  name="date" id="date" type="date">
-  </div>
-  <div>
-    <label for="description">Description:</label><input #newDescription name="description" id="description" type="text">
-  </div>
-  <div>
-    <label for="amount">Amount:</label><input #newAmount name="amount" id="amount" type="number" step="0.01">
-  </div>
-  <div>
-    <button (click)="addMovement(newDate, newDescription, newAmount)">Submit movement</button>
-  </div>
-</form>
+<app-movement-form></app-movement-form>
 <h2>Movements</h2>
 <table>
   <thead>
@@ -20,6 +6,7 @@
       <th style="text-align: left;">Data</th>
       <th style="text-align: right;">Importo</th>
       <th style="text-align: left;">Descrizione</th>
+      <th style="text-align: left;"></th>
     </tr>
   </thead>
   <tbody>

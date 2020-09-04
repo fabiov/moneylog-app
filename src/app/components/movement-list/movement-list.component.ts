@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { movements } from '../movements';
-import { Movement } from '../models/movement.model';
+import { movements } from '../../movements';
+import { Movement } from '../../models/movement.model';
 
 @Component({
   selector: 'app-movement-list',
@@ -18,18 +18,6 @@ export class MovementListComponent implements OnInit {
   }
 
   ngOnInit(): void {
-  }
-
-  addMovement(date: HTMLInputElement, description: HTMLInputElement, amount: HTMLInputElement) {
-    console.log(`Addinig movements date: ${date.value}, description: ${description.value} amd amount: ${amount.value}`);
-
-    this.movements.push(new Movement(movements.length + 1, parseFloat(amount.value), description.value, new Date(date.value)));
-
-    amount.value      = '';
-    date.value        = '';
-    description.value = '';
-
-    return false;
   }
 
   sortedMovements(): Array<Movement> {
