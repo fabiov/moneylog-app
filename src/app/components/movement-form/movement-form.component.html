@@ -2,22 +2,22 @@
 <form [formGroup]="movementForm" (ngSubmit)="onSubmit(movementForm.value)">
   <div>
     <label for="amount">Amount:</label>
-    <input [formControl]="amount" id="amount" type="number" step="0.01" placeholder="0.0">
-    <div *ngIf="amount.hasError('required')" class="ui error message">
+    <input [formControl]="movementForm.controls.amount" id="amount" type="number" step="0.01" placeholder="0.0">
+    <div *ngIf="movementForm.controls.amount.hasError('required')" class="ui error message">
       Amount is required
     </div>
   </div>
   <div>
     <label for="date">Date:</label>
-    <input [formControl]="date" id="date" type="date">
-    <div *ngIf="date.hasError('required')" class="ui error message">
+    <input [formControl]="movementForm.controls.date" id="date" type="date">
+    <div *ngIf="movementForm.controls.date.hasError('required')" class="ui error message">
       Date is required
     </div>
   </div>
   <div>
     <label for="description">Description:</label>
-    <input [formControl]="description" id="description" type="text" placeholder="Description">
-    <div *ngIf="description.hasError('required')" class="ui error message">
+    <input [formControl]="movementForm.controls.description" id="description" type="text" placeholder="Description">
+    <div *ngIf="movementForm.controls.description.hasError('required')" class="ui error message">
       Description is required
     </div>
   </div>

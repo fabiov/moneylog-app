@@ -10,20 +10,12 @@ import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/fo
 export class MovementFormComponent implements OnInit {
   movementForm: FormGroup;
 
-  amount: AbstractControl;
-  date: AbstractControl;
-  description: AbstractControl;
-
   constructor(fb: FormBuilder) {
     this.movementForm = fb.group({
       amount: ['', Validators.required],
       date: ['', Validators.required],
       description: ['', Validators.required]
     });
-
-    this.amount = this.movementForm.controls.amount;
-    this.date = this.movementForm.controls.date;
-    this.description = this.movementForm.controls.description;
   }
 
   ngOnInit(): void {
@@ -32,9 +24,9 @@ export class MovementFormComponent implements OnInit {
   onSubmit(form: any): void {
     console.log('you submitted value:', form);
 
-    this.amount.setValue('');
-    this.date.setValue('');
-    this.description.setValue('');
+    this.movementForm.controls.amount.setValue('');
+    this.movementForm.controls.date.setValue('');
+    this.movementForm.controls.description.setValue('');
   }
 
   // addMovement(date: HTMLInputElement, description: HTMLInputElement, amount: HTMLInputElement) {
