@@ -9,8 +9,8 @@ import {Movement} from '../../models/movement.model';
 })
 export class MovementListComponent implements OnInit {
   private movementService: MovementService;
-  private loading: boolean;
-  private movements: Array<Movement>;
+  loading: boolean;
+  movements: Array<Movement>;
 
   constructor(movementService: MovementService) {
     this.movementService = movementService;
