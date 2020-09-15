@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 
 @Injectable({
@@ -9,6 +9,6 @@ export class MovementService {
   constructor(private http: HttpClient) { }
 
   fetchList() {
-    return this.http.get('/assets/mocks/movements.json');
+    return this.http.get('/assets/mocks/movements.json', {headers: {Authorization: 'Bearer '}});
   }
 }

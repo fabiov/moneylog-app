@@ -1,5 +1,7 @@
 <app-movement-form></app-movement-form>
 <h2>Movements</h2>
+
+<div *ngIf="loading">loading...</div>
 <table>
   <thead>
     <tr>
@@ -10,7 +12,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let movement of sortedMovements()">
+    <tr *ngFor="let movement of movements">
       <td>{{ movement.date | date: 'dd/MM/y'}}</td>
       <td style="text-align: right;">{{ movement.amount | currency: 'EUR' }}</td>
       <td>{{ movement.description }}</td>

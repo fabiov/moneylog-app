@@ -1,15 +1,14 @@
 export class Movement {
 
   public id: number;
+  public date: Date;
   public amount: number;
   public description: string;
-  public date: Date;
 
-  constructor(id: number, amount: number, description: string, date: Date) {
-
-    this.id = id;
-    this.amount = amount;
-    this.description = description;
-    this.date = date;
+  constructor(obj?: any) {
+    this.id           = obj && obj.id           || null;
+    this.date         = obj && obj.date         || null;
+    this.amount       = obj && obj.amount       || null;
+    this.description  = obj && obj.description  || null;
   }
 }

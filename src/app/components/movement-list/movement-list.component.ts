@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { movements } from '../../movements';
-import { Movement } from '../../models/movement.model';
+import {Component, OnInit} from '@angular/core';
+import {movements} from '../../movements';
+import {Movement} from '../../models/movement.model';
+import {HttpClient} from '@angular/common/http';
+import {environment} from '../../../environments/environment';
 
 @Component({
   selector: 'app-movement-list',
@@ -8,13 +10,19 @@ import { Movement } from '../../models/movement.model';
   styleUrls: ['./movement-list.component.css']
 })
 export class MovementListComponent implements OnInit {
+  http: HttpClient;
+  loading: boolean;
   movements: Array<Movement>;
 
-  constructor() {
-    this.movements = [];
-    for (const item of movements) {
-      this.movements.push(new Movement(item.id, item.amount, item.description, item.date));
-    }
+  constructor(http: HttpClient) {
+    this.http = http;
+    this.loading = true;
+
+    this.http.get(environment.apiUrl + '/api/movements', {headers: {Authorization: 'Bearer ' + environment.apiKey}})
+      .subscribe(data => {
+        this.movements = data['hydra:member'];
+        this.loading = false;
+      });
   }
 
   ngOnInit(): void {
