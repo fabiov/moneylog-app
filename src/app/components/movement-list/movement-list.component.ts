@@ -10,26 +10,18 @@ import {Movement} from '../../models/movement.model';
 export class MovementListComponent implements OnInit {
   private movementService: MovementService;
   loading: boolean;
-  movements: Array<Movement>;
+  movements: Movement[];
 
   constructor(movementService: MovementService) {
     this.movementService = movementService;
     this.loading = true;
 
     this.movementService.fetchList().subscribe(data => {
-      this.movements = data['hydra:member'];
+      this.movements = data;
       this.loading = false;
     });
   }
 
   ngOnInit(): void {
-  }
-
-  sortedMovements(): Array<Movement> {
-    return this.movements.sort((a: Movement, b: Movement) => b.date.getTime() - a.date.getTime());
-  }
-
-  movementWasSelected(movement: Movement) {
-    console.log('Movement clicked', movement);
   }
 }
