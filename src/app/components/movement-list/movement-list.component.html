@@ -6,6 +6,7 @@
   <thead>
     <tr>
       <th style="text-align: left;">Data</th>
+      <th style="text-align: left;">Conto</th>
       <th style="text-align: right;">Importo</th>
       <th style="text-align: left;">Descrizione</th>
       <th style="text-align: left;"></th>
@@ -14,6 +15,7 @@
   <tbody>
     <tr *ngFor="let movement of movements">
       <td>{{ movement.date | date: 'dd/MM/y'}}</td>
+      <td>{{ movement.account }}</td>
       <td style="text-align: right;">{{ movement.amount | currency: 'EUR' }}</td>
       <td>{{ movement.description }}</td>
       <td><a title="View" [routerLink]="['/movements', movement.id]">View</a></td>

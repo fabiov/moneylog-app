@@ -1,0 +1,6 @@
+POST http://localhost:8081/authentication_token
+Accept: */*
+Content-Type: application/json
+
+{"email":"mario.rossi@fixture.it","password":"mario123"}
+###
