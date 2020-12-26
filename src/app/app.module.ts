@@ -29,11 +29,11 @@ import { SettingsComponent } from './settings/settings.component';
     FormsModule,
     ReactiveFormsModule,
     RouterModule.forRoot([
-      { path: 'login', component: LoginComponent },
-      { path: 'movements', component: MovementListComponent },
-      { path: 'movements/:movementId', component: MovementDetailsComponent },
-      { path: 'settings', component: SettingsComponent },
-    ])
+        { path: 'login', component: LoginComponent },
+        { path: 'movements', component: MovementListComponent },
+        { path: 'movements/:movementId', component: MovementDetailsComponent },
+        { path: 'settings', component: SettingsComponent },
+    ], { relativeLinkResolution: 'legacy' })
   ],
   providers: [],
   bootstrap: [AppComponent]
